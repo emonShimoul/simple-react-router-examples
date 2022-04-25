@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/friends">Friends</Link>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <NavLink
+            style={({ isActive }) => {
+                return {
+                  margin: "1rem 0",
+                  color: isActive ? "red" : "",
+                };
+              }}
+            to="/friends">Friends</NavLink>
         </div>
     );
 };
